@@ -1,0 +1,50 @@
+[
+    {
+        "nome": "Agrha Consultoria",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala 452",
+        "telefone": "(21) 2629-5434",
+        "website": "www.agrhaconsultoria.com.br",
+        "email": "agrhaconsultoria@agrha.com",
+        "facebook": "www.facebook.com/agrha.consultoria/"
+    },
+    {
+        "nome": "Meta Consultoria",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco E - Sala 217",
+        "telefone": "(21)2629-5586/ (21)99122-7278",
+        "website": "www.metaconsultoria.com/",
+        "email": "mkt@metaconsultoria.com",
+        "facebook": "www.facebook.com/metaconsultoriauff/"
+    },
+    {
+        "nome": "Papodesign",
+        "endereco": "R. Passo da Pátria, 156 - 209, Bloco D, sala 453b",
+        "telefone": "",
+        "website": "https://papodesign.wixsite.com/meusite",
+        "email": "contato@papodesign.com.br",
+        "facebook": "www.facebook.com/designpapo/"
+    },
+    {
+        "nome": "P&Q Engenharia Jr.",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala 360B",
+        "telefone": "(21) 98255-6262",
+        "website": "www.peqengenhariajr.com.br/",
+        "email": "contato@peqengenhariajr.com.br",
+        "facebook": "www.facebook.com/peqengenhariajr/"
+    },
+    {
+        "nome": "SmartTel",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala 360A",
+        "telefone": "(21) 2629-5531",
+        "website": "www.smartteljr.com.br/",
+        "email": "contato@smartteljr.com.br",
+        "facebook": "www.facebook.com/smartteljr/"
+    },
+    {
+        "nome": "Tesla Jr.",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala 331",
+        "telefone": "(21) 99795-8303",
+        "website": "www.teslajunior.com.br",
+        "email": "comercial@teslajunior.com.br",
+        "facebook": "www.facebook.com/TeslaJunior/"
+    }
+]
