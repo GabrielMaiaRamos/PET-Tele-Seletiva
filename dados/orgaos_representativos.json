@@ -1,0 +1,90 @@
+[
+    {
+        "nome": "Centro Acadêmico da Família de Engenharia de Produção (CAFE Produção)",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala 442A",
+        "telefone": "",
+        "website": "www.engenhariadeproducaoniteroi.sites.uff.br/",
+        "email": "",
+        "facebook": "www.facebook.com/cafeproducao/"
+    },
+    {
+        "nome": "Centro Acadêmico de Desenho Industrial (CADI)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "",
+        "facebook": ""
+    },
+    {
+        "nome": "Diretório Acadêmico de Engenharia Ambiental (DEAMB)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "",
+        "facebook": "www.facebook.com/deambuff/"
+    },
+    {
+        "nome": "Diretório Acadêmico de Engenharia Civil (DAEC)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "daecuffoficial@gmail.com",
+        "facebook": "www.facebook.com/uffdaec/"
+    },
+    {
+        "nome": "Diretório acadêmico de Engenharia Elétrica (DAEL)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "daeluff@gmail.com",
+        "facebook": "www.facebook.com/daeluff/"
+    },
+    {
+        "nome": "Diretório acadêmico de Engenharia Mecânica (DAEM)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "daemuff@gmail.com",
+        "facebook": "www.facebook.com/daemuff/"
+    },
+    {
+        "nome": "Diretório acadêmico de Engenharia Química (DAEQ)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "daequff@gmail.com",
+        "facebook": "www.facebook.com/DAEQ-UFF-1648203592116625/"
+    },
+    {
+        "nome": "Diretório acadêmico de Engenharia de Telecomunicações (DATele)",
+        "endereco": "",
+        "telefone": "",
+        "website": "",
+        "email": "dateleuff@gmail.com",
+        "facebook": "www.facebook.com/DATeleUFF/"
+    },
+    {
+        "nome": "Diretório acadêmico Octávio Cantanhede (DAOC) (Engenharias)",
+        "endereco": "",
+        "telefone": "(21) 2629-5724",
+        "website": "",
+        "email": "",
+        "facebook": "www.facebook.com/daoctaviocantanhede/"
+    },
+    {
+        "nome": "Diretório Estudantil de Engenharia Agrícola e Ambiental (DEEAGRI)",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco - Sala 103",
+        "telefone": "(21) 2629-5437",
+        "website": "",
+        "email": "deeagriuff@gmail.com",
+        "facebook": "www.facebook.com/deeagriuff/"
+    },
+    {
+        "nome": "Diretório Central dos Estudantes da UFF - Fernando Santa Cruz (DCE UFF)",
+        "endereco": "Avenida Visconde do Rio Branco, 625",
+        "telefone": "(21) 5455-8545",
+        "website": "",
+        "email": "dcelivreuff@gmail.com",
+        "facebook": "www.facebook.com/dceuff"
+    }
+]
