@@ -1,0 +1,18 @@
+[
+    {
+        "nome": "Enactus",
+        "endereco": "",
+        "telefone": "",
+        "website": "www.enactus.org.br/",
+        "email": "uffenactus@gmail.com",
+        "facebook": "www.facebook.com/uffenactus/"
+    },
+    {
+        "nome": "Ramo Estudantil IEEE",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco D - Sala C52",
+        "telefone": "",
+        "website": "sites.ieee.org/sb-uff/",
+        "email": "sb.uff@ieee.org",
+        "facebook": "www.facebook.com/ieee.uff/"
+    }
+]
