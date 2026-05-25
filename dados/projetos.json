@@ -1,0 +1,42 @@
+[
+    {
+        "nome": "Blackbird Aerodesign",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco E - Sala 109",
+        "telefone": "(21) 2629-5574",
+        "website": "blackbirdaerodesign.wixsite.com/blackbirdaerodesign",
+        "email": "blackbirduff@gmail.com",
+        "facebook": "www.facebook.com/BlackbirdAerodesignUFF/"
+    },
+    {
+        "nome": "Equipe Araribóia",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco E",
+        "telefone": "",
+        "website": "www.equipearariboia.uff.br/",
+        "email": "arariboiauff@gmail.com",
+        "facebook": "www.facebook.com/EquipeArariboiaUFF/"
+    },
+    {
+        "nome": "Equipe Buffalo - Fórmula SAE",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco E - Sala 122",
+        "telefone": "(21) 2629-5609",
+        "website": "equipebuffalo.wixsite.com/equipe-buffalo",
+        "email": "marketing.buffalosae@gmail.com",
+        "facebook": "www.facebook.com/equipe.buffalo"
+    },
+    {
+        "nome": "Equipe Faraday Racing",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco E - Sala 155",
+        "telefone": "",
+        "website": "",
+        "email": "equipefaraday@gmail.com",
+        "facebook": "https://www.facebook.com/Faraday.FSAE/"
+    },
+    {
+        "nome": "Equipe Tuffão - Baja SAE",
+        "endereco": "Rua Passo da Pátria, 156 - Bloco - Sala",
+        "telefone": "(21) 2629-5609",
+        "website": "",
+        "email": "equipetuffao@gmail.com",
+        "facebook": "www.facebook.com/tuffaobajasae/"
+    }
+]
