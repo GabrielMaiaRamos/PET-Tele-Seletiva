@@ -1,29 +1,48 @@
 \documentclass[12pt,a4paper]{article}
+
+%pacotes (nao sei se usarei todos)
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
-\usepackage{graphicx}
-
-%[FORMATAR A CAPA]
-\title{
-    \large Universidade Federal Fluminense - UFF\\
-    Escola de Engenharia – TCE\\
-    Departamento de Engenharia de Telecomunicações - TET
-    
-    \vspace{1cm}
-    
-    \textbf{Projeto de Desenvolvimento Web\\(Desenvolvimento de Webpages Dinâmicas)}
-}
-\author{Gabriel Maia Ramos}
-\date{Data limite: XX/XX/2026 \\ Data de entrega: \today}
+\usepackage{graphicx} %imagens
+\usepackage{hyperref} %links
+\usepackage{listings} %apendices
+\usepackage{xcolor} %cores
 
 \begin{document}
 
-%[GERAR A CAPA]
-\maketitle
+%[CAPA]
+\begin{titlepage}
+    \centering
+    %[IES, Unidade e Departamento]
+    {\large \textbf{Universidade Federal Fluminense - UFF}}
+    \\[0.5cm]
+    {\large Escola de Engenharia - TCE}
+    \\[0.5cm]
+    {\large Departamento de Engenharia de Telecomunicações - TET}
+    \\[2cm]
+    
+    %[Titulo]
+    {\Large \textbf{Projeto de Desenvolvimento Web\\(Desenvolvimento de Webpages Dinâmicas)}} \\[1cm]
+    
+    %[Autor]
+    \begin{flushright} %na direita
+        \textbf{Autor:} Gabriel Maia Ramos
+                \\[9cm] %pular para o "final da pag"
+    \end{flushright}
+
+    
+    %[Datas]
+    \begin{flushleft} %na esquerda
+        \textbf{Data limite para a entrega:} 26 de Junho de 2026 \\
+        \textbf{Data da entrega:} \today
+    \end{flushleft}
+\end{titlepage}
+
+%[Sumario]
+\tableofcontents
 \newpage
 
-\tableofcontents %[SUMARIO]
-\newpage
+%[Documento]
 
 \section{Objetivo}
 Um parágrafo definindo objetivo a ser alcançado com o trabalho.
