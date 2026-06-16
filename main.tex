@@ -55,6 +55,21 @@ Principais motivações para a realização deste trabalho:
     \item \textbf{Experiência do Usuário:} Fornecer uma navegação mais fluida e responsiva comparada a páginas estáticas tradicionais
     \item \textbf{Busca dos Dados:} O grande volume e dispersão de informações sobre os grupos da UFF resultam no exaustivo processo de coleta, filtragem e validação manual dos dados, exigindo um esforço considerável para torná-los confiáveis e consistentes.
 \end{itemize}
+\newpage
+\section{Desenvolvimento}
 
+\subsection{Introdução Teórica}
+
+O projeto baseia-se no \textbf{Modelo Cliente-Servidor}, uma arquitetura organizada na divisão entre:
+\begin{itemize}
+    \item \textbf{Cliente:} o navegador, que solicita páginas ao servidor e exibe ao usuário.
+    \item \textbf{Servidor:} a máquina que recebe os pedidos, processa os scripts PHP, consulta os arquivos JSON e devolve o HTML pronto.
+\end{itemize}
+
+Vale ressalatar que a \textbf{Internet} é a infraestrutura física que conecta as máquinas, enquanto a \textbf{World Wide Web (WWW)} é a operação que atua sobre essas infraestrutura através do sistema conectado por \textbf{hyperlinks}, que são acessíveis por meio das \textbf{URLs} e transferidos entre cliente e servidor pelo protocolo \textbf{HTTP}.\\
+
+No \textit{front-end} (cliente) é usado o \textbf{HTML} para estruturar o conteúdo e o \textbf{CSS} para definir o visual e o layout. No \textit{back-end} (servidor), o \textbf{PHP} gera páginas dinamicamente, convertendo os dados armazenados em \textbf{JSON} em vetores e operando sobre eles para montar o HTML final.\\
+
+Essa separação entre: camada de dados (arquivos JSON), lógica de processamento (PHP) e apresentação visual (HTML/CSS) atribui ao sistema \textbf{modularidade} e \textbf{manutenibilidade}.
 
 \end{document}
