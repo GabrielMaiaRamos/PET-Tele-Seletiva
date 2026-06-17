@@ -72,4 +72,95 @@ No \textit{front-end} (cliente) é usado o \textbf{HTML} para estruturar o conte
 
 Essa separação entre: camada de dados (arquivos JSON), lógica de processamento (PHP) e apresentação visual (HTML/CSS) atribui ao sistema \textbf{modularidade} e \textbf{manutenibilidade}.
 
+% CONFIGURACAO PARA ESPAÇOS DE CODIGO (PADRAO EXPORTADO DO NOTION) PARA MELHOR LEGIBILIDADE
+\definecolor{fundo_codigo}{rgb}{0.96,0.96,0.94}
+\definecolor{comentario}{rgb}{0.25,0.50,0.35}
+\definecolor{palavra_chave}{rgb}{0.10,0.30,0.70}
+\definecolor{texto_string}{rgb}{0.60,0.10,0.10}
+\lstset{
+    backgroundcolor=\color{fundo_codigo},   
+    commentstyle=\color{comentario}\itshape,
+    keywordstyle=\color{palavra_chave}\bfseries,
+    stringstyle=\color{texto_string},
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true,                 
+    numbers=left,                    
+    numbersep=8pt,
+    numberstyle=\tiny\color{gray},
+    tabsize=4,
+    showstringspaces=false,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {ã}{{\~a}}1 {â}{{\^a}}1 {é}{{\'e}}1 {ê}{{\^e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {õ}{{\~o}}1 {ô}{{\^o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1 {Á}{{\'A}}1 {Ã}{{\~A}}1 {Â}{{\^A}}1 {É}{{\'E}}1 {Ê}{{\^E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Õ}{{\~O}}1 {Ô}{{\^O}}1 {Ú}{{\'U}}1 {Ç}{{\c{C}}}1
+}
+
+\subsection{Lógica de Processamento}
+
+\paragraph{1. Matriz de Categorias}
+Um vetor para mapear o título de cada bloco ao caminho do seu arquivo de dados em formato JSON. O que garante manutenibilidade e escalabilidade:
+
+\begin{lstlisting}[language=php]
+$categorias = [
+    "Associações"            => "dados/associacoes.json",
+    "Coletivos"              => "dados/coletivos.json",
+    "Empresas Juniores"      => "dados/empresas_juniores.json",
+    "Organizações"           => "dados/organizacoes.json",
+    "Órgãos Representativos" => "dados/orgaos_representativos.json",
+    "Projetos"               => "dados/projetos.json"
+];
+\end{lstlisting}
+    
+\paragraph{2. Verificação de Existência}
+Apenas como medida de segurança, a função \ \texttt{file\_exists()} para impedir falhas caso algum arquivo seja corrompido ou removido:
+
+\begin{lstlisting}[language=php]
+if (file_exists($caminho_arquivo)) {
+    // O processamento só ocorre se o arquivo existir
+}
+\end{lstlisting}
+\newpage
+\paragraph{3. Alocação de Memória}
+O conteúdo é convertido em uma lista, permitindo o acesso indexado:
+
+\begin{lstlisting}[language=php]
+$json_puro = file_get_contents($caminho_arquivo);
+$grupos = json_decode($json_puro, true);
+\end{lstlisting}
+    
+\paragraph{4. Laço Duplo}
+Dois laços de repetição \ \texttt{foreach} alinhados para varrer as categorias e, em seguida, gerar os cartões visuais para cada grupo:
+
+\begin{lstlisting}[language=php]
+foreach ($categorias as $titulo_bloco => $caminho_arquivo) {
+    if (file_exists($caminho_arquivo)) {
+        if($grupos != null){
+            foreach ($grupos as $grupo) {
+                // Renderização os Cards no layout HTML
+            }
+        }
+    }
+}
+\end{lstlisting}
+    
+\paragraph{5. Tratamento de Inconsistências}
+Validar a existência do endereço web e verificar se o texto ja inicia com \texttt{"https://"} pois, se não, implementa automaticamente.
+
+\begin{lstlisting}[language=php]
+$site = isset($grupo['website']) ? trim($grupo['website']) : '';
+
+if (!empty($site) && $site != "Não informado" && $site != "Não possui") {
+    if (strpos($site, 'http://') !== 0 && strpos($site, 'https://') !== 0) {
+        $link_destino = "https://" . $site;
+    } else {
+        $link_destino = $site;
+    }
+    $classe_css = "card";
+    $target = "target='_blank'";
+} else {
+    $link_destino = "#";
+    $classe_css = "card sem-link";
+    $target = "";
+}
+\end{lstlisting}
+
+
 \end{document}
