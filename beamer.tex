@@ -1,0 +1,197 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+\usetheme{default}
+\usecolortheme{default}
+
+\definecolor{petazul}{RGB}{29, 82, 122}    
+\definecolor{petlaranja}{RGB}{241, 90, 36}
+
+\setbeamercolor{structure}{fg=petazul}
+\setbeamercolor{title}{fg=petazul}
+\setbeamercolor{frametitle}{fg=petazul}
+
+% Margem laranja
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3pt,dp=0pt]{}
+    \color{petlaranja}\rule{\paperwidth}{3pt}
+  \end{beamercolorbox}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+\lstset{
+    backgroundcolor=\color{gray!5},   
+    basicstyle=\ttfamily\tiny\color{black},
+    breaklines=true,
+    keywordstyle=\color{petazul}\bfseries,
+    commentstyle=\color{gray}\itshape,
+    stringstyle=\color{black},
+    showstringspaces=false,
+    extendedchars=true,
+    literate={á}{{\'a}}1 {ã}{{\~a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {õ}{{\~o}}1 {ç}{{\c{c}}}1 {Ú}{{\'U}}1
+}
+
+%[Infos da apa]
+\title{Desenvolvimento de Webpages Dinâmicas}
+\subtitle{Catálogo de Atividades da Engenharia UFF}
+\author{Gabriel Maia Ramos}
+\institute{
+    Universidade Federal Fluminense - UFF \\
+    Escola de Engenharia (TCE) \\
+    Departamento de Engenharia de Telecomunicações (TET)
+}
+\date{\today}
+
+\begin{document}
+
+% 1[Capa]
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% [Sumário]
+\begin{frame}{Agenda da Apresentação}
+    \tableofcontents
+\end{frame}
+
+
+\section{Introdução e Motivação}
+
+
+\begin{frame}{Contextualização}
+    \textbf{Cenário}
+    \begin{itemize}
+        \item A UFF conta com dezenas de grupos (Empresas Juniores, Coletivos, Projetos).
+        \item As informações estavam dispersas, incompletas, ou desatualizadas em páginas antigas.
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    \textbf{Proposta de Solução}
+    \begin{itemize}
+        \item Desenvolver uma plataforma web unificada e dinâmica, capaz de centralizar essas informações de forma padronizada.
+        \item Garantir fácil manutenção e escalabilidade dos dados sem a necessidade de reescrever o código.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivações do Projeto}
+    \begin{itemize}
+        \item \textbf{Busca e Tratamento de Dados:} O alto volume de grupos gerou um processo exaustivo de coleta, filtragem e correção manual das informações.
+        \vspace{0.3cm}
+        \item \textbf{Experiência do Usuário:} Transformar dados brutos e fragmentados em um catálogo interativo, responsivo e de navegação fluida.
+        \vspace{0.3cm}
+        \item \textbf{Aperfeiçoamento Técnico:} Aplicar o Modelo Cliente-Servidor na prática, estudando a comunicação entre JSON e PHP/HTML.
+    \end{itemize}
+\end{frame}
+
+
+\section{Fundamentação e Arquitetura}
+
+
+\begin{frame}{Fundamentação Teórica: Modelo Cliente-Servidor}
+    \centering
+    \begin{tikzpicture}
+        \node[draw, thick, minimum width=3.5cm, minimum height=1cm] (C) at (0,0) {Cliente (Navegador)};
+        \node[draw, thick, minimum width=3.5cm, minimum height=1cm] (S) at (7,0) {Servidor (Apache/PHP)};
+        
+        \draw[->, thick] (C.north east) -- (S.north west) node[midway, above, font=\scriptsize] {Requisição HTTP};
+        \draw[<-, thick] (C.south east) -- (S.south west) node[midway, below, font=\scriptsize] {Resposta HTML Dinâmica};
+    \end{tikzpicture}
+    
+    \vspace{1cm}
+    \begin{itemize}
+        \item \textbf{Front-end (HTML/CSS):} Estrutura semântica e \textit{design} da interface.
+        \item \textbf{Back-end (PHP):} Motor lógico que lê e processa os dados no servidor.
+        \item \textbf{Base de Dados (JSON):} Estrutura leve de intercâmbio de dados.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Arquitetura e Modularização}
+    O projeto foi estruturado utilizando o princípio de \textbf{modularização}, dividindo as responsabilidades para manter o código limpo:
+    
+    \vspace{0.5cm}
+    \begin{itemize}
+        \item \textbf{\texttt{dados/}}: Diretório isolado contendo os dados brutos (\texttt{.json}).
+        \item \textbf{\texttt{style.css}}: Regras visuais e "animações".
+        \item \textbf{\texttt{index.php}}: Trabalha \textbf{unido ao HTML}, processando a lógica e inserindo dados dinânmicos na estrutura da página.
+    \end{itemize}
+\end{frame}
+
+
+\section{Lógica de Processamento}
+
+
+\begin{frame}[fragile]{Lógica 1: Memória}
+\begin{lstlisting}[language=php]
+// Mapeamento modular das categorias
+$categorias = [
+    "Empresas Juniores" => "dados/empresas_juniores.json",
+    // ...
+];
+
+// Validacao defensiva e Alocacao em Memoria
+if (file_exists($caminho_arquivo)) {
+    $json_puro = file_get_contents($caminho_arquivo);
+    $grupos = json_decode($json_puro, true);
+}
+\end{lstlisting}
+    
+    \vspace{0.2cm}
+    \textbf{Como funciona:} Um vetor organiza quais arquivos devem ser lidos. A função \texttt{file\_exists()} previne falhas, e \texttt{json\_decode()} traduz o texto para a memória do PHP,
+\end{frame}
+
+\begin{frame}[fragile]{Lógica 2: Tratamento de Inconsistências}
+\begin{lstlisting}[language=php]
+foreach ($grupos as $grupo) {
+    // Tratamento de espacos invisiveis e inconsistencias manuais
+    $site = isset($grupo['website']) ? trim($grupo['website']) : '';
+
+    if (!empty($site) && $site != "Nao informado") {
+        // Inserindo o protocolo de rede caso o usuario tenha esquecido
+        $link = (strpos($site, 'http') !== 0) ? "https://" . $site : $site;
+        $classe = "card"; // Elemento ganha interatividade no CSS
+    } else {
+        $link = "#";
+        $classe = "card sem-link"; // Elemento tem sua interatividade desativada
+    }
+    // O PHP injeta essas variaveis ($link, $classe) direto no HTML gerado
+}
+\end{lstlisting}
+    \vspace{0.2cm}
+    \textbf{Como funciona:} Esse bloco converte erros humanos (URLs incompletas, termos como "Não possui") em uma interface visualmente correta e livre de \textit{links} quebrados.
+\end{frame}
+
+
+\section{Interface e Conclusão}
+
+
+\begin{frame}{Decisões de Design (UI/UX)}
+    \begin{itemize}
+        \item \textbf{Identidade Visual:} Adoção da paleta de cores institucional do PET-Tele.
+        \item \textbf{Carrossel Horizontal:} Inspirado em vitrines digitais, permite a exibição de múltiplos cartões (\textit{Cards}), o que aproveita a altura da tela.
+        \item \textbf{Interações:} Efeitos de transição (\textit{hover}) elevam os cartões ativos, enquanto cartões sem \textit{site} cadastrado mantêm-se estáticos, oferecendo uma página limpa e clara ao usuário.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusões}
+    \begin{itemize}
+        \item \textbf{Objetivo Alcançado:} Transição de um cenário estático para um ecossistema dinâmico.
+        \item \textbf{Manutenibilidade:} A atualização do catálogo pode ser feita por qualquer membro do grupo através de edições em texto (JSON), sem risco de quebra da interface.
+        \item \textbf{Escalabilidade:} O código modular permite a fácil adição de novas categorias.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \Large \textbf{Obrigado!} \\
+    \vspace{1cm}
+    \normalsize Perguntas? \\
+    \vspace{1cm}
+    \small gabrielmaia@id.uff.br
+\end{frame}
+
+\end{document}
