@@ -20,7 +20,7 @@
             <li>Órgãos Representativos</li>
             <li>Projetos</li>
         </ul>
-        <p><em>Deslize os blocos abaixo para o lado para explorar os grupos e clique num cartão para aceder ao site oficial.</em></p>
+        <p><em>Clique num cartão para direcionar ao site oficial.</em></p>
     </div>
 
     <?php
